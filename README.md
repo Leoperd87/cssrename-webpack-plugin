@@ -105,7 +105,7 @@ module.exports = Backbone.View.extend({
 
 React example:
 
-```javascript 1.6
+```javascript
 class HelloMessage extends React.Component {
   render() {
     return <div  className="___hello__">Hello {this.props.name}</div>;
