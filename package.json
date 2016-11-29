@@ -1,0 +1,24 @@
+{
+  "name": "cssrename-webpack-plugin",
+  "version": "1.0.0",
+  "description": "CSS class names minimization",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leoperd87/cssrename-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "css"
+  ],
+  "author": "Efim Vl. Dejin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leoperd87/cssrename-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/Leoperd87/cssrename-webpack-plugin#readme",
+  "dependencies": {
+    "webpack-core": "0.6.8"
+  }
+}
