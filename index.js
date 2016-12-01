@@ -54,8 +54,8 @@ CssRenamePlugin.prototype.apply = function (compiler) {
             short2long[classesData[i].result] = classesData[i].key;
             long2short[classesData[i].key] = classesData[i].result;
           }
-          source = source.split('%short2long%').join(JSON.stringify(short2long));
-          source = source.split('%long2short%').join(JSON.stringify(long2short));
+          source = source.split('short2longCSS').join(JSON.stringify(short2long));
+          source = source.split('long2shortCSS').join(JSON.stringify(long2short));
 
           compilation.assets[file] = new ConcatSource(source);
         });
