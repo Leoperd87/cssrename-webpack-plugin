@@ -49,13 +49,20 @@ CssRenamePlugin.prototype.apply = function (compiler) {
           console.log('Profit: ' + profit);
           var short2long = {};
           var long2short = {};
+          var short2cleanLong = {};
+          var cleanLong2short = {};
           for (i = 0; i < classesData.length; i++) {
             source = source.split(classesData[i].key).join(classesData[i].result);
             short2long[classesData[i].result] = classesData[i].key;
             long2short[classesData[i].key] = classesData[i].result;
+            var cleanName = classesData[i].key.replace(/^___(.+)__$/, '$1');
+            short2long[classesData[i].result] = cleanName;
+            long2short[cleanName] = classesData[i].result;
           }
           source = source.split('short2longCSS').join(JSON.stringify(short2long));
           source = source.split('long2shortCSS').join(JSON.stringify(long2short));
+          source = source.split('short2cleanLongCSS').join(JSON.stringify(short2cleanLong));
+          source = source.split('cleanLong2shortCSS').join(JSON.stringify(cleanLong2short));
 
           compilation.assets[file] = new ConcatSource(source);
         });
