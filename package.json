@@ -1,6 +1,6 @@
 {
   "name": "cssrename-webpack-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CSS class names minimization",
   "main": "index.js",
   "repository": {

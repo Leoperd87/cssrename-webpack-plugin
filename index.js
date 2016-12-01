@@ -56,8 +56,8 @@ CssRenamePlugin.prototype.apply = function (compiler) {
             short2long[classesData[i].result] = classesData[i].key;
             long2short[classesData[i].key] = classesData[i].result;
             var cleanName = classesData[i].key.replace(/^___(.+)__$/, '$1');
-            short2long[classesData[i].result] = cleanName;
-            long2short[cleanName] = classesData[i].result;
+            short2cleanLong[classesData[i].result] = cleanName;
+            cleanLong2short[cleanName] = classesData[i].result;
           }
           source = source.split('short2longCSS').join(JSON.stringify(short2long));
           source = source.split('long2shortCSS').join(JSON.stringify(long2short));
