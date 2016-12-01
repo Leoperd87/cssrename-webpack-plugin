@@ -47,9 +47,15 @@ CssRenamePlugin.prototype.apply = function (compiler) {
             return prev + (c.key.length - c.result.length) * c.count;
           }, 0);
           console.log('Profit: ' + profit);
+          var short2long = {};
+          var long2short = {};
           for (i = 0; i < classesData.length; i++) {
             source = source.split(classesData[i].key).join(classesData[i].result);
+            short2long[classesData[i].result] = classesData[i].key;
+            long2short[classesData[i].key] = classesData[i].result;
           }
+          source = source.split('%short2long%').join(JSON.stringify(short2long));
+          source = source.split('%long2short%').join(JSON.stringify(long2short));
 
           compilation.assets[file] = new ConcatSource(source);
         });
